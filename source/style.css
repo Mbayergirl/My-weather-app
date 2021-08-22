@@ -166,3 +166,21 @@ body {
 #day-5 {
   width: 60px;
 }
+
+#source-link {
+  text-decoration: none;
+}
+
+#source-code {
+  background-color: rgb(206, 204, 204);
+  width: 300px;
+  display: block;
+  margin: 0 auto;
+  padding-left: 10px;
+  border-radius: 7px;
+}
+
+#source-link:hover {
+  text-decoration: underline;
+  text-decoration-color: #0a58ca;
+}
