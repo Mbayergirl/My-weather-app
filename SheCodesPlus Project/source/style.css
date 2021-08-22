@@ -1,0 +1,168 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+  border: 8px solid #383737;
+  margin: 4rem auto;
+  padding: 3rem;
+  background-image: linear-gradient(
+      100deg,
+      rgba(176, 220, 203, 0.4),
+      rgba(224, 226, 230, 0.4)
+    ),
+    url(../images/background-picture2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #616263;
+  border-radius: 30px;
+  padding-top: 40px;
+  padding-left: 30px;
+  padding-bottom: 40px;
+  margin: 40px auto;
+  width: 800px;
+  height: 830px;
+}
+.form-control {
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+#city-search {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+#place {
+  margin-bottom: 0px;
+}
+#date {
+  margin-top: 0;
+  margin-bottom: 0px;
+}
+
+#city-search,
+#current-location-button {
+  transition: all 200ms ease-in-out;
+}
+
+#current-location-button {
+  margin-left: 20px;
+  padding-left: 20px;
+  padding-right: 25px;
+}
+#temps {
+  padding-top: 110px;
+  font-size: 30px;
+  padding-left: 17px;
+}
+
+#units-celsius,
+#units-fahrenheit {
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.city-name {
+  padding-top: 30px;
+
+  padding-left: 12px;
+  padding-bottom: 30px;
+  font-size: 50px;
+}
+.day {
+  font-size: 30px;
+}
+
+#current-temp {
+  font-size: 50px;
+  padding-top: 70px;
+  padding-right: 10px;
+  font-weight: bolder;
+}
+#actual-temp {
+  font-size: 60px;
+
+  padding-top: 100px;
+  padding-left: 10px;
+}
+#list {
+  font-size: 15px;
+  padding-top: 120px;
+  padding-left: 0px;
+}
+#value-list {
+  list-style: none;
+}
+
+#weather {
+  font-size: 20px;
+  padding-bottom: 30px;
+}
+
+#sunrise {
+  width: 50px;
+}
+#sunset {
+  font-weight: 700;
+}
+#sunrise,
+#sunrise1,
+#sunset {
+  padding-top: 40px;
+}
+
+#sunny-interval {
+  width: 280px;
+}
+#today {
+  width: 60px;
+}
+.today1 {
+  padding-left: 23px;
+}
+.weekday1 {
+  padding-left: 21px;
+}
+.weekday2 {
+  padding-left: 18px;
+}
+.weekday3 {
+  padding-left: 18px;
+}
+.weekday4 {
+  padding-left: 12px;
+}
+.weekday5 {
+  padding-left: 10px;
+}
+.weekday6 {
+  padding-left: 5px;
+}
+#day-1 {
+  width: 60px;
+}
+.day1 {
+  padding-left: 23px;
+}
+.day2 {
+  padding-left: 23px;
+}
+.day3 {
+  padding-left: 21px;
+}
+.day4,
+.day5 {
+  padding-left: 26px;
+}
+#day-2 {
+  width: 60px;
+}
+#day-3 {
+  width: 50px;
+}
+#day-4 {
+  width: 60px;
+}
+#day-5 {
+  width: 60px;
+}
