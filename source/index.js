@@ -53,6 +53,29 @@ function showTemp(response) {
   let realTemperature = Math.round(response.data.main.feels_like);
   let realFeelTempElement = document.querySelector("#real-feel");
   realFeelTempElement.innerHTML = `Real feel: ${realTemperature}°C`;
+
+  let now = new Date();
+  let time = document.querySelector("#date");
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
+  let hours = now.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  time.innerHTML = `${day}, ${hours}:${minutes}`;
 }
 
 function showCoordinates(position) {
