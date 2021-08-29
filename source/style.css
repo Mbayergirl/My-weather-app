@@ -116,58 +116,61 @@ body {
 }
 #today {
   width: 60px;
+
+  position: relative;
+  left: -10px;
 }
-.today1 {
-  padding-left: 23px;
-}
-.weekday1 {
-  padding-left: 21px;
-}
-.weekday2 {
-  padding-left: 18px;
-}
-.weekday3 {
-  padding-left: 18px;
-}
-.weekday4 {
-  padding-left: 12px;
-}
-.weekday5 {
-  padding-left: 10px;
-}
-.weekday6 {
-  padding-left: 5px;
-}
+
 #day-1 {
   width: 60px;
+  position: relative;
+  left: -10px;
 }
-.day1 {
-  padding-left: 23px;
-}
-.day2 {
-  padding-left: 23px;
-}
-.day3 {
-  padding-left: 21px;
-}
-.day4,
-.day5 {
-  padding-left: 26px;
-}
+
 #day-2 {
   width: 60px;
+  position: relative;
+  left: -15px;
 }
 #day-3 {
-  width: 50px;
+  width: 60px;
+  position: relative;
+  left: -10px;
 }
 #day-4 {
   width: 60px;
+  position: relative;
+  left: -10px;
 }
 #day-5 {
   width: 60px;
+  position: relative;
+  left: -10px;
+}
+#weekday1,
+#weekday2,
+#weekday3,
+#weekday4,
+#weekday5,
+#weekday6 {
+  list-style: none;
+}
+
+#today-1,
+#next-day,
+#next-day1,
+#next-day2,
+#next-day3,
+#next-day4 {
+  border: 1px solid #616263;
+  border-radius: 12px;
 }
 
 #source-link {
+  text-decoration: none;
+}
+
+#linkedin {
   text-decoration: none;
 }
 
@@ -181,6 +184,11 @@ body {
 }
 
 #source-link:hover {
+  text-decoration: underline;
+  text-decoration-color: #0a58ca;
+}
+
+#linkedin:hover {
   text-decoration: underline;
   text-decoration-color: #0a58ca;
 }
