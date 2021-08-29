@@ -73,12 +73,6 @@ body {
   font-size: 30px;
 }
 
-#current-temp {
-  font-size: 50px;
-  padding-top: 70px;
-  padding-right: 10px;
-  font-weight: bolder;
-}
 #actual-temp {
   font-size: 60px;
 
@@ -132,73 +126,6 @@ body {
 .active:hover {
   text-decoration: none;
   color: rgb(33, 33, 33);
-}
-
-#today {
-  width: 60px;
-
-  position: relative;
-  left: -10px;
-}
-
-#day-1 {
-  width: 60px;
-  position: relative;
-  left: -10px;
-}
-
-#day-2 {
-  width: 60px;
-  position: relative;
-  left: -15px;
-}
-#day-3 {
-  width: 60px;
-  position: relative;
-  left: -10px;
-}
-#day-4 {
-  width: 60px;
-  position: relative;
-  left: -10px;
-}
-#day-5 {
-  width: 60px;
-  position: relative;
-  left: -10px;
-}
-#weekday1,
-#weekday2,
-#weekday3,
-#weekday4,
-#weekday5,
-#weekday6 {
-  list-style: none;
-}
-
-#today-1,
-#next-day,
-#next-day1,
-#next-day2,
-#next-day3,
-#next-day4 {
-  border: 1px solid #616263;
-  border-radius: 12px;
-}
-
-#day-11,
-#day-12,
-#day-13,
-#day-14,
-#day-15,
-#day-16,
-#high-temp1,
-#high-temp2,
-#high-temp3,
-#high-temp4,
-#high-temp5,
-#high-temp6 {
-  font-weight: bold;
 }
 
 #source-link {
