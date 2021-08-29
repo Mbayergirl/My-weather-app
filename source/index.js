@@ -64,6 +64,7 @@ function formatDateSunset(timestamp) {
 function showTemp(response) {
   console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
+  celsiusTemperature = temperature;
 
   let temperatureElement = document.querySelector("#actual-temp");
   temperatureElement.innerHTML = `${temperature}`;
@@ -134,16 +135,17 @@ function showCelsius(event) {
   celsius.classList.add("active");
   fahrenheit.classList.remove("active");
   let celsiusTemp = document.querySelector("#actual-temp");
-  celsiusTemp.innerHTML = Math.round(celsiusTemperature);
+  celsiusTemp.innerHTML = celsiusTemperature;
 }
 let celsius = document.querySelector("#units-celsius");
 celsius.addEventListener("click", showCelsius);
 
 function showFahrenheit(event) {
   event.preventDefault();
-  let fahrenheitTemp = document.querySelector("#actual-temp");
   celsius.classList.remove("active");
   fahrenheit.classList.add("active");
+  let fahrenheitTemp = document.querySelector("#actual-temp");
+
   let fahrenheitConvert = (celsiusTemperature * 9) / 5 + 32;
   fahrenheitTemp.innerHTML = Math.round(fahrenheitConvert);
 }
@@ -151,4 +153,4 @@ function showFahrenheit(event) {
 let fahrenheit = document.querySelector("#units-fahrenheit");
 fahrenheit.addEventListener("click", showFahrenheit);
 
-let celsiusTemperature = `${temperature.value}`;
+let celsiusTemperature = null;

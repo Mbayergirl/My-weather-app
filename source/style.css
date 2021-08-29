@@ -123,6 +123,17 @@ body {
 #sunny-interval {
   width: 250px;
 }
+
+.active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+
+.active:hover {
+  text-decoration: none;
+  color: rgb(33, 33, 33);
+}
+
 #today {
   width: 60px;
 
