@@ -115,8 +115,13 @@ body {
   padding-top: 40px;
 }
 
+#middle,
+#middle-1 {
+  height: 260px;
+}
+
 #sunny-interval {
-  width: 280px;
+  width: 250px;
 }
 #today {
   width: 60px;

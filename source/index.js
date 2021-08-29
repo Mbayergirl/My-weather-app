@@ -67,6 +67,11 @@ function showTemp(response) {
 
   let temperatureElement = document.querySelector("#actual-temp");
   temperatureElement.innerHTML = `${temperature}`;
+  let iconElement = document.querySelector("#sunny-interval");
+  iconElement.setAttribute(
+    "src",
+    `images/${response.data.weather[0].icon}.png`
+  );
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   let wind = Math.round(response.data.wind.speed);
