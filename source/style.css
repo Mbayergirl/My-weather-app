@@ -166,6 +166,21 @@ body {
   border-radius: 12px;
 }
 
+#day-11,
+#day-12,
+#day-13,
+#day-14,
+#day-15,
+#day-16,
+#high-temp1,
+#high-temp2,
+#high-temp3,
+#high-temp4,
+#high-temp5,
+#high-temp6 {
+  font-weight: bold;
+}
+
 #source-link {
   text-decoration: none;
 }
