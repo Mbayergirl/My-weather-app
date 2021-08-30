@@ -68,6 +68,14 @@ function formatDateSunset(timestamp) {
   return `${hours}:${minutes}`;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "55f59614e2025a21009b8c49463db5d3";
@@ -109,14 +117,6 @@ function showTemp(response) {
   sunriseElement.innerHTML = formatDate(response.data.sys.sunrise * 1000);
   let sunsetElement = document.querySelector("#sunset");
   sunsetElement.innerHTML = formatDateSunset(response.data.sys.sunset * 1000);
-}
-
-function formatDay(timestamp) {
-  let date = new Date(timestamp * 1000);
-  let day = date.getDay();
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-  return days[day];
 }
 
 function displayForecast(response) {
