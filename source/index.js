@@ -61,6 +61,13 @@ function formatDateSunset(timestamp) {
   return `${hours}:${minutes}`;
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "55f59614e2025a21009b8c49463db5d3";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showTemp(response) {
   console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
@@ -73,6 +80,10 @@ function showTemp(response) {
     "src",
     `images/${response.data.weather[0].icon}.png`
   );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
+
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   let wind = Math.round(response.data.wind.speed);
@@ -135,11 +146,10 @@ function displayForecast(response) {
       <div class="col-2">
         <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
         <img
-          src="http://openweathermap.org/img/wn/${
-            forecastDay.weather[0].icon
-          }@2x.png"
-          alt=""
+          src="images/${forecastDay.weather[0].icon}.png"
+           alt=""
           width="42"
+          
         />
         <div class="weather-forecast-temperatures">
           <span class="weather-forecast-temperature-max"> ${Math.round(
@@ -158,13 +168,6 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
-function getForecast(coordinates) {
-  console.log(coordinates);
-  let apiKey = "55f59614e2025a21009b8c49463db5d3";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayForecast);
-}
-
 function showCoordinates(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
@@ -173,6 +176,7 @@ function showCoordinates(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemp);
 }
+
 function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(showCoordinates);
 }
