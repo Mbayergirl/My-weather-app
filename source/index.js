@@ -35,6 +35,36 @@ function showCity(event) {
 let cityForm = document.querySelector("#enter-your-city");
 cityForm.addEventListener("submit", showCity);
 
+function search(city) {
+  let apiKey = "55f59614e2025a21009b8c49463db5d3";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemp);
+}
+
+function formatDateOne(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
+}
+
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
@@ -89,6 +119,8 @@ function showTemp(response) {
   let wind = Math.round(response.data.wind.speed);
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = `Wind: ${wind}km/h`;
+  let dateElement = document.querySelector("#date");
+  dateElement.innerHTML = formatDateOne(response.data.dt * 1000);
   let description = document.querySelector("#weather");
   description.innerHTML = response.data.weather[0].description;
   let yourCity = document.querySelector("#place");
@@ -152,12 +184,12 @@ function displayForecast(response) {
           
         />
         <div class="weather-forecast-temperatures">
-          <span class="weather-forecast-temperature-max"> ${Math.round(
+          <span class="weather-forecast-temperature-max">  ${Math.round(
             forecastDay.temp.max
-          )}° </span>
-          <span class="weather-forecast-temperature-min"> ${Math.round(
+          )}°C </span>
+          <div class="weather-forecast-temperature-min"> ${Math.round(
             forecastDay.temp.min
-          )}° </span>
+          )}°C </div>
         </div>
       </div>
   `;
@@ -209,3 +241,5 @@ let fahrenheit = document.querySelector("#units-fahrenheit");
 fahrenheit.addEventListener("click", showFahrenheit);
 
 let celsiusTemperature = null;
+
+search("Edinburgh");

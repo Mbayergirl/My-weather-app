@@ -154,3 +154,8 @@ body {
   text-decoration: underline;
   text-decoration-color: #0a58ca;
 }
+
+.weather-forecast-temperature-max,
+.weather-forecast-date {
+  font-weight: bold;
+}
